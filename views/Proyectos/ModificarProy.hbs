@@ -1,0 +1,23 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Editar Poryecto</h3>
+        </div>
+        <div class="card-body">
+            <form action="/proyectos/modificar/{{registros._id}}" method="POST">
+                <div class="form-group">
+                    <input type="text" name="nombre_proy" class="form-control" placeholder="Proyecto" value="{{registros.nombre_proy}}">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="cliente_proy" class="form-control" placeholder="Cliente" value="{{registros.cliente_proy}}">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email_cliente" class="form-control" placeholder="Correo" value="{{registros.email_cliente}}">
+                </div>                
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

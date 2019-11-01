@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.body_contact{
+    background: url(../img/soycliente-bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.form-title{
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    padding: 14px 0;
+}
+.form-title span{
+    color: #ff851b;    
+}
+.form{
+    background: rgba(0, 0, 0, .6);
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    padding: 5px 35px;
+    padding-bottom: 30px;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+.form-header{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.form-label{
+    display: block;
+    color: #f5a30a;
+    font-size: 14px;
+    font-family: Roboto;
+    position: relative;
+}
+
+.form-input, .form-textarea{
+    background: rgba(255, 255, 255, .1);
+    border:none;
+    outline: none;
+    border-bottom: 1px solid #ff851b;
+    width: 100%;
+    border-radius: 3px;
+    padding: 1vh 0;
+    /*box-sizing: border-box;*/
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: #fff;
+    font-family: Roboto;
+    
+}
+.form-textarea{
+    resize: vertical;
+    max-height: 200px;
+    min-height: 75px;
+}
+.btn-submit{
+    width: 100%;
+    font-family: Roboto;
+    outline: none;
+    background: #ff851b;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.btn-submit:hover{
+    background: #F29718;
+
+}
+.contenedor{
+    text-align: center;
+    margin: auto;
+}
+.header{
+    background: white;
+    display: inline-flex;
+    width: 100%;
+    
+}
+
+
+

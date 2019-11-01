@@ -1,0 +1,34 @@
+<body>
+<div class="card col-md-6 mt-4 text-left mx-auto bg-light">
+	<div class="card-body">
+
+    	<h4 class="card-title bg-secondary text-white btn-lg text-center btn-block">Crear Proyecto</h4>
+
+		<form action="/proyectos/incluir" method="POST">
+
+			<div class="form-group">
+				<span class="">Proyecto</i></span>
+				<div class="">
+					<input id="nombre_proy" name="nombre_proy" type="text" placeholder="Nombre del Proyecto" class="form-control" value="{{nombre_proy}}">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<span class="">Cliente</i></span>
+				<select name="cliente_proy" id="cliente_proy" class="form-control" placeholder="Usuario">
+					<option value="empty">Seleccione un cliente</option>
+					{{#each usuarios}}
+						<option value="{{username_cli}}">{{username_cli}}</option>
+					{{/each}}
+				</select>
+			</div>
+
+			<div class="form-group">
+				<div class=" text-center">
+					<button type="submit" class="btn btn-warning">Guardar Proyecto</button>
+				</div>
+			</div> 
+		</form>
+	</div>
+</div>				
+</body>

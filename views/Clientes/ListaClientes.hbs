@@ -1,0 +1,27 @@
+
+  <div class="row">
+    <div class="col-sm-11"><h3 class="mt-3 text-warning text-center ml-5 pl-5">Lista de Clientes</h3></div>
+    <div class="col-sm-1 text-center"><a href="/register" class="mt-3 btn btn-outline-warning btn-sm">+</a></div>
+  </div>
+<table class="table table-sm table-hover mt-2">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Correo</th>
+      <th scope="col" class="text-primary">Acciones</th>
+      <th scope="col" class=""></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each registros}}   
+    <tr>
+        <td><h6>{{name_cli}}</h6></td>
+        <td>{{username_cli}}</td>
+        <td>{{email_cli}}</td>
+        <td><a href="/modificar/{{_id}}">Editar</a></td>
+        <td><a href="/eliminar/{{_id}}">Eliminar</a></td>        
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

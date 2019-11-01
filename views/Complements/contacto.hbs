@@ -1,0 +1,28 @@
+    <div class="contenedor body_contact">
+      
+        <form action="/send-email"  method="post" class="form" name="contacto">
+            <div class="form-header">
+                <div>
+                    <a href="/"><i class="fa fa-window-close icon-close-text"></i></a>
+                </div>                
+                
+                <div>
+                    <h1 class="form-title">Contacto</h1>
+                </div>
+            </div>
+            <label for="nombre" class="form-label">Nombre:
+            <input type="text" name="nombre" id="nombre" class="form-input" placeholder="Escriba su nombre" required>
+            
+            <label for="correo" class="form-label">Correo:
+            <input type="mail" name="correo" id="correo" class="form-input" placeholder="Escriba su correo electronico" required>
+
+            <label for="telf" class="form-label">Teléfono:
+            <input type="tel" name="telf" id="telf" class="form-input" placeholder="Escriba su telefono" required>
+
+            <label for="msg" class="form-label">Mensaje:
+            <textarea id="mensaje" name="msg" class="form-textarea" placeholder="Escriba aqui su mensaje" required>
+            </textarea>
+            <input type="submit" class="btn-submit" value="Enviar">
+        </form>
+    </div>
+  

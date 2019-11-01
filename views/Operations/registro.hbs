@@ -1,0 +1,59 @@
+<body>
+<div class="card col-md-6 mt-4 text-left mx-auto bg-light">
+	<div class="card-body">
+
+    	<h4 class="card-title bg-secondary text-white btn-lg text-center btn-block">Registro de Clientes</h4>
+
+		<form action="/register" method="POST">
+
+			<div class="form-group">
+				<span class="">Nombre del cliente</i></span>
+				<div class="">
+					<input name="nameClient" type="text" placeholder="Nombre Completo" class="form-control" value="{{nameClient}}">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<span class="">Usuario</i></span>
+				<div class="">
+					<input type="text" name="usernameClient" placeholder="Usuario (username)" class="form-control" value="{{usernameClient}}">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<span class="">Contraseña</i></span>
+				<div class="">
+					<input type="password" name="passwordClient" placeholder="Contraseña (password)" class="form-control" value="{{passwordClient}}">
+				</div>
+			</div>	
+
+			<div class="form-group">
+				<span class="">Repita contraseña</i></span>
+				<div class="">
+					<input type="password" name="pass2Client" placeholder="Repita Contraseña" class="form-control" value="{{pass2Client}}">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<span class="">Correo electronico</i></span>
+				<div class="">
+					<input type="email" name="emailClient" placeholder="Escriba un correo" class="form-control" value="{{emailClient}}">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<span class="">Telefono</i></span>
+				<div class="">
+					<input type="tel" name="telfClient" placeholder="Telefono" class="form-control" value="{{telfClient}}">
+				</div>
+			</div>			
+
+			<div class="form-group">
+				<div class=" text-center">
+					<button type="submit" class="btn btn-warning">Registrar Cliente</button>
+				</div>
+			</div> 
+		</form>
+	</div>
+</div>				
+</body>

@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-sm-11"><h3 class="mt-3 text-warning text-center ml-5 pl-5">Lista de Proyectos</h3></div>
+  <div class="col-sm-1 text-center"><a href="/proyectos/incluir" class="mt-3 btn btn-outline-warning btn-sm">+</a></div>
+</div>
+<table class="table table-sm table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Proyecto</th>
+      <th scope="col">Cliente</th>
+      <th scope="col" class="text-primary">Acciones</th>
+      <th scope="col" class=""></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each registros}}   
+    <tr>
+        <td><h6>{{nombre_proy}}</h6></td>
+        <td>{{cliente_proy}}</td>
+        <td><a href="/proyectos/modificar/{{_id}}">Editar</a></td>
+        <td><a href="/proyectos/eliminar/{{_id}}">Eliminar</a></td>        
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

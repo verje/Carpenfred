@@ -1,0 +1,499 @@
+*{
+  font-family: Roboto;
+}
+nav{
+  border-bottom: 3px solid rgb(255, 192, 0);
+  position: relative;
+}
+.logo_img { 
+
+	padding: 0px;
+	margin: 0px;
+	position: absolute;
+	left: 2vw;
+	top: 3px;
+	z-index: 10;
+}
+
+.underline{
+  border: 1px solid rgba(255, 191, 0, 0.3); 
+  width: 250px;
+}
+
+.intro{
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5vw;
+  margin-left: 3vw;
+}
+.intro-h1{
+  font-weight: 700;
+  padding: 8vw 0 0 0;
+  font-size: 3vw;
+}
+
+.div-intro{
+  width:45%;
+}
+
+.btn-ver-mas{
+  margin: 0 auto;
+  margin-top: 10px;
+  color: white;
+  background-color: rgba(10, 10, 10, 0.1);
+  padding: 0.5vw 2vw 0.5vw 2vw;
+  font-family: 'Montserrat', sans-serif;
+  border: 2px solid white;
+  transition: 0.3s;
+  margin-left: 3vw;
+}
+
+.btn-ver-mas:hover{
+  background-color: rgba(10, 10, 10, 0.5);
+  border: 1px solid white;
+  color: orange;
+  transition: 0.3s;
+}
+
+.mt-6{
+  margin-top: 6vw;
+}
+.carpenfred-footer {
+  margin-top: 35%;
+  border: 3px solid white;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.img_index_bg{
+ position: absolute;
+	left: 0px;
+	max-width:100%;
+	margin: 0;
+
+  z-index: -1;
+}
+
+.media{
+
+  transform: translate(-53%, -50%);
+}
+
+.fac {
+  margin: 2px 10px;
+  padding: 5px;
+  height: 43px;
+  color: rgb(88, 84, 84);
+  width: 43px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  border: 2px solid orange;
+}
+
+.exelta{
+  background-color: #f7e0b7
+}
+
+span{
+  padding: 10px;
+}
+
+.container_custom {
+    position: relative;
+    margin-top: 50px;
+    margin-right: 10px;
+    width: 350px;
+    height: 230px;
+}
+  
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s ease;
+}
+  
+.container_custom:hover .overlay {
+  display: block;
+  background: rgba(0, 0, 0, .3);
+}
+  
+.img_custom {
+  position: absolute;
+  width: 350px;
+  height: 230px;
+  left: 0;
+  border: 2px solid cornsilk;
+  border-radius: 5px;
+}
+  
+.title {
+  position: absolute;
+  width: 350px;
+  left: 0;
+  top: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  z-index: 1;
+  transition: top .5s ease;
+}
+.title1 {
+  position: absolute;
+  width: 350px;
+  left: 0;
+  top: 120px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  z-index: 1;
+  transition: top .5s ease;
+}
+.title2 {
+  position: absolute;
+  width: 350px;
+  left: 0;
+  top: 140px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  z-index: 1;
+  transition: top .5s ease;
+}
+.title3 {
+  position: absolute;
+  width: 350px;
+  left: 0;
+  top: 200px;
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(238, 209, 115);
+  z-index: 1;
+  transition: top .5s ease;
+}
+
+.container_custom:hover .title {
+  top: 75px;
+}
+
+.button {
+  position: absolute;
+  z-index: 4;
+  left: 8px;
+  padding: 0px 6px 0px 6px;
+  opacity: 0;
+  transition: opacity .35s ease;
+  border-radius: 50px;  
+  border: 0;
+  background-color: rgba(61, 66, 66, .5);
+  color: white;
+}
+
+.button:hover{
+  background-color: rgba(10, 10, 10, 0.5)
+}
+
+.container:hover .button {
+  opacity: 1;
+}
+
+.btn_ig {
+  top: 110px;
+}
+.btn_og {
+  top: 150px;
+}
+.btn_ep {
+  top: 190px;
+}
+
+.iconoimage:hover{
+  color: rgb(72, 255, 0);
+}
+.iconodislike:hover{
+  color: rgb(251, 255, 0);
+}
+.iconotrash:hover{
+  color: red;
+}
+
+.container_custom:hover .button {
+  opacity: 1;
+}
+
+.mt-cards{
+  margin-top:8%;
+}
+
+.container-cards{
+  width: 100%;
+  /*max-width: 1200px;*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  
+}
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.25s;
+}
+
+.ver_mas{
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+
+  border: 0 solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, .5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+} 
+
+.ver_mas:hover {
+  text-decoration: none;
+  border: 1px solid;
+  color: rgb(230, 209, 95);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px rgb(52, 58, 64); 
+}
+
+.container-cards .card{
+  width: 270px;
+  height: 290px;
+  border: rgb(243, 211, 142) 1px solid;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(65, 6, 245, 0.2);
+  background: #fff;
+  color: rgb(107, 85, 60);
+  overflow: hidden;
+  margin: 20px;
+  text-align: center;
+  transition: all 0.25s;
+}
+
+.container-cards .card:hover{
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.container-cards .card img{
+  width: 330px;
+  height: 220px;
+}
+
+.container-cards .card h1{
+  padding: 5%;
+}
+
+.who{
+  background: linear-gradient(rgb(232, 234, 238), rgb(255, 255, 255));
+  border-radius: 3px;
+  margin-top: 40%;
+}
+
+.trabajos{
+  padding: 3%;
+}
+.trabajos h1{
+  color: rgb(37, 31, 27);
+  text-align: center;
+}
+.trabajos p{
+  text-align: center;
+  padding: 1%;
+}
+
+.servicios{
+  color: rgb(37, 31, 27);
+  text-align: center;
+}
+
+.grid-3{
+  width: 29%;
+  float: left;
+  margin: 2% 2%;
+  text-align: center;
+  color: rgb(42, 42, 44);
+  background: linear-gradient(to bottom, #f5da8f, #ffffff, #ffffff, #ffffff);
+  border-top: 3px solid rgb(255, 192, 0);
+  border-radius: 3px;
+}
+
+.grid-3 img{
+  width: 50%;
+  height: 50%;
+
+}
+
+.grid-3 h3{
+  padding: 5% 0;
+  vertical-align: middle;
+  font-size: 3vh;
+}
+.grid-3 p{
+  color: rgb(97, 96, 94);
+  text-align: justify;
+  text-align-last: center;
+  padding: 3% 10%;
+}
+
+.icon-close-text{
+  color: rgb(206, 197, 197);
+}
+
+.img_galeria {
+  border-radius: 0px 0px 200px 200px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: -2px;
+  right: 15px;
+  z-index: 99;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: rgba(238, 119, 51, 0.7);
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0px 8px 0 8px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+header{
+	background-color: #84b4b1;
+	color: #fff;
+	text-align: center;
+  padding: 0 0 30px 0;
+} 
+
+.h1-header{
+text-align: center;
+text-transform: uppercase;
+font-size: 3vw;
+font-weight: 400;
+letter-spacing: 3px;
+line-height: .8;
+padding-top: 50px;
+font-family: 'Montserrat', sans-serif;
+}
+
+.span-header{
+text-transform: uppercase;
+letter-spacing: 7px;
+font-size: 1.5vw;
+line-height: 1;        
+}
+
+.links{
+  color: rgb(48, 45, 40);
+}
+
+.carpenfred{
+  font-family: "Varela Round";
+  color: rgb(255, 192, 0);
+  font-size: 18px;
+  font-weight: 700;
+  visibility: hidden;
+}
+
+.ico{
+
+  background: linear-gradient(to right, rgb(240, 206, 111) 0%, #e99230 100%);
+  background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+}
+
+@media screen and (max-width: 767px) {
+  .img-rotate{
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari 3-8 */
+    transform: rotate(90deg);
+    width: 80%;
+  }
+  .btn-ver-mas{
+    margin-top: 30vw;
+  }
+  .logo_img { 
+    display: none;  
+  }
+  .titulos{
+    text-align: center;
+  }
+  .underline{
+    border: 1px solid rgba(255, 191, 0, 0.3); 
+    width: 250px;
+    margin: 0 auto;
+  }
+  .carpenfred{
+    visibility: visible;
+  }
+  .carpenfred:hover{
+    font-family: "Varela Round";
+    color:orange;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration-color: rgb(184, 162, 93);
+    transition: orange 0.8s linear 0.2s
+  }
+
+  .btn-ver-mas{
+    margin: 0 auto;
+    margin-top: 0vw;
+    color: white;
+    background-color: rgba(10, 10, 10, 0.1);
+    padding: 0.2vw 1vw 0.2vw 1vw;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    border: 2px solid white;
+    transition: 0.3s;
+    margin-left: 3vw;
+  }
+  
+  .btn-ver-mas:hover{
+    background-color: rgba(10, 10, 10, 0.5);
+    border: 1px solid white;
+    color: orange;
+    transition: 0.3s;
+  }
+
+  .intro{
+    font-size: 3vw;
+  }
+  .intro-h1{
+    font-size: 4vw;
+    padding: 1vw 0 0 0;
+  }
+  .div-intro{
+    width: 100%;
+    padding-right: 8vw;
+  }
+
+
+
+
+}

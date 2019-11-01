@@ -1,0 +1,36 @@
+{{#if fotos}}
+    <header>
+        <h1 class="h1-header">Galeria de Fotos<br> 
+        <span class="span-header">[{{user.name_cli}}]</span></h1>
+    </header>
+    <body>
+    <div class="card-columns">
+        {{#each fotos}}
+        <div class="card">
+            <a href="#" data-toggle="modal" data-target="#id{{_id}}">
+                <img class="card-img-top" src="{{imageURL}}" alt="Card image cap">
+            </a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="id{{_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="container mx-auto text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="1004">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <img class="img-fluid rounded mx-auto text-center" src="{{imageURL}}" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+{{else}}
+    <div class="col-5 mx-auto">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Carpenfred no ha subido fotos a su galería</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="location.href = '/';">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+{{/if}}

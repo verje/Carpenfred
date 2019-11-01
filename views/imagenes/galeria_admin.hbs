@@ -1,0 +1,26 @@
+<header>
+    <h1 class="h1-header">[ Administración de Galeria de Fotos ]<br></h1>
+</header>
+<div class="container">
+    <div class="row">
+        {{#each fotos}}
+        <div class="container_custom">
+            <img src={{imageURL}} class="img_custom" alt="Carpenfred Galeria" />
+            <p class="title">{{caption_img}}</p>
+            <p class="title1">{{user}}</p>
+            <p class="title2">{{proyect_name}}</p>
+            <p class="title3">{{InGallery}} está incluido en la Galería</p>
+            <div class="overlay"></div> 
+            <form action="/image/in/{{_id}}" method="POST">
+                <button class="button btn_ig" type="submit"><i class="iconoimage fa fa-file-image-o fa-1x" aria-hidden="true"></i></button>
+            </form>
+            <form action="/image/out/{{_id}}" method="POST">
+                <button class="button btn_og" type="submit"><i class="iconodislike fa fa-thumbs-o-down fa-1x" aria-hidden="true"></i></button>          
+            </form>
+            <form action="/image/delete/{{_id}}" method="POST">
+                <button class="button btn_ep" type="submit"><i class="iconotrash fa fa-trash-o fa-1x" aria-hidden="true"></i></button> 
+            </form>
+        </div>
+        {{/each}}
+    </div>
+</div>

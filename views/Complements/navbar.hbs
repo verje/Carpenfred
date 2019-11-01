@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="/"><img src="/img/carpenfred_sm_dark_circle.png" class="logo_img img-fluid" alt="Carpinteria Carpenfred, trabajos en madera"></a>    
+    <a class="navbar mr-auto carpenfred" href="/">CarpenFred</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- div containing the toggable navigation -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <!-- navigation menu -->
+        <ul class="navbar-nav ml-auto">
+           
+            <!-- active link corresponding to the current page -->
+            <li class="nav-item">
+            <a class="nav-link" href="#about">Quienes Somos</a>
+            </li>
+
+            <li class="nav-item">
+            <a class="nav-link ml-3" href="#servicios">Nuestros servicios</a>
+            <li class="nav-item">
+
+            <li class="nav-item mr-3">
+            <a class="nav-link ml-3" href="/contact">Contacto</a>
+            </li>
+        {{#if user}} 
+            {{#IsAdmin user.role}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle ml-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Clientes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/register">Agregar</a>
+                        <a class="dropdown-item" href="/consultar">Consultar</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle ml-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Proyectos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/proyectos/incluir">Agregar</a>
+                    <a class="dropdown-item" href="/proyectos/ver_proyectos">Consultar</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/subirfotos">Subir fotos</a>               
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle ml-3 active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{user.name_cli}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/galeria_admin">Galeria Carpenfred</a> 
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </li>
+            {{else}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle ml-3 active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{user.name_cli}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/galeria_cliente">Mi Galeria</a> 
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </li>
+            {{/IsAdmin}}
+        {{else}}
+            <li class="nav-item">
+            <a class="nav-link ml-4" href="/login">Login</a>
+            </li>
+        {{/if}} 
+
+    </ul>
+    </div>    
+</nav>

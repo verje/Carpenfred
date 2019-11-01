@@ -1,0 +1,79 @@
+ <div class="card col-md-6 mt-4 text-left mx-auto bg-light">
+	<div class="card-body">
+        <h4 class="card-title bg-secondary text-white btn-lg text-center btn-block">Subir Fotos</h4>
+        <form method="post" action="/subirfotos" enctype="multipart/form-data">
+            <div class="form-group">
+                <span class="">Cliente</span>
+                <div class="">
+                    <select name="user" id="user_list" class="form-control" placeholder="Usuario">
+                        <option value="empty">Seleccione un usuario</option>
+                        {{#each usuarios}}
+                            <option value="{{username_cli}}">{{username_cli}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="">Proyecto</span>
+                <div class="">
+                    <select name="proyect" id="proyect_list" class="form-control" placeholder="Proyecto">
+                        <option value="empty">Seleccione Proyecto</option>
+                        {{#each proyectos}}
+                            <option value="{{nombre_proy}}">{{nombre_proy}}</option>   
+                        {{/each}}
+                    </select>
+                </div>
+            </div> 
+
+            <div class="form-group">
+                <span class="">Foto</span>
+                <div class="">
+                    <input type="file" name="photo" id ="foto"  onchange="checkFoto()" accept="image/png, image/jpeg, image/jpg" placeholder="foto"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" onchange="getCheckvalue()" class="custom-control-input" name="checkoption" id="checkoption"/>
+                    <label class="custom-control-label" for="checkoption">Incluir foto en galería pública</label>
+                </div> 
+            </div>
+
+            <div class="form-group">
+                <span class="">Descripcion de la foto</span>
+                <div class="">
+                    <input type="text" name="caption" id="caption" placeholder="Descripcion de la imagen" class="form-control"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class=" text-center">                    
+                    <button type="submit" id="enviar" class="btn btn-warning" disabled="true"><i class="fa fa-cloud-upload" style="color: white;" aria-hidden="true"></i><span style="color: white;">Subir</span></button>
+                </div>
+            </div>
+            <input type="hidden" id="inputcheck" name="inputcheck" value="no">                  
+        </form>
+	</div>    
+</div>
+<script>
+    function getCheckvalue() {
+        var checkit = document.getElementById("checkoption");
+        if(checkit.checked){
+            document.getElementById("inputcheck").value = "si";
+        } else {
+            document.getElementById("inputcheck").value = "no"
+        }
+    }
+    function checkFoto(){
+        var foto = document.getElementById("foto");
+        var boton = document.getElementById("enviar");
+        if (foto.files.length == 0) {
+            boton.disabled = true;
+            alert("No ha seleccionado ninguna foto")
+        } else {
+            boton.disabled = false;
+            console.log(this.files)
+        }
+    }
+</script>

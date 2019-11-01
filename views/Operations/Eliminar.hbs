@@ -1,0 +1,40 @@
+<div class="card col-md-6 mt-4 text-left mx-auto bg-light">
+	<div class="card-body">
+
+    	<h4 class="card-title bg-danger text-white btn-lg text-center btn-block">¿Realmente desea eliminar?</h4>
+
+		<div class="form-group">
+
+			<div class="form-group">
+				<span class="">Nombre del cliente</i></span>
+				<div class="">
+                    <div class="form-control"><h6>{{registros.name_cli}}</h6></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<span class="">Usuario</i></span>
+				<div class="">
+                    <div class="form-control"><h6>{{registros.username_cli}}</h6></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<span class="">Correo electronico</i></span>
+				<div class="">
+                    <div class="form-control"><h6>{{registros.email_cli}}</h6></div>
+				</div>
+			</div>
+            <div class="row mx-auto">
+                <form action="/eliminar/{{registros._id}}" method="POST">
+                    <button class="btn btn-outline-danger btn-sm mr-3" type="submit">
+                        Eliminar
+                    </button>
+                </form>
+                <form action="/Consultar" method="GET">
+                    <button class="btn btn-outline-info btn-sm mr-3" type="submit">
+                        Cancelar
+                    </button>
+                </form> 
+            </div>
+		</div>
+	</div>
+</div>	
