@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'); 
 require('dotenv').config();
-mongoose.connect(process.env.dbURI); 
+mongoose.connect("mongodb+srv://vrifjrom:kley2c0p@cluster0-8jh9m.mongodb.net/test?retryWrites=true&w=majority"); 
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function () {  
   console.log('Mongoose conexion exitosa');
