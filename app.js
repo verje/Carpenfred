@@ -55,13 +55,8 @@ app.use(cookieParser());
 }));*/
 
 app.use(cookieSession({
-  name: 'sesion', 
-  keys    : ['Natalia24*', 'Claudia01*'],
-  secret : process.env.LICENCIA,
-  resave: true,
-  saveUninitialized: true,
-  rolling: true, 
-  cookie : {maxAge: 1*60*60*1000}
+  name: 'sesion',
+  keys: ['Natalia24', 'Claudia01']
 }));
 
 // Passport init
