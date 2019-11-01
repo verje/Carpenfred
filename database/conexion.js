@@ -1,6 +1,16 @@
 var mongoose = require('mongoose'); 
 require('dotenv').config();
-mongoose.connect("mongodb+srv://vrifjrom:kley2c0p@cluster0-8jh9m.mongodb.net/test?retryWrites=true&w=majority"); 
+
+mongoose.connect('mongodb+srv://vrifjrom:kley2c0p@cluster0-8jh9m.mongodb.net/test?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+mongoose.connection.once('open', function(){
+console.log('Conection has been made!');}).on('error', function(error)
+  {console.log('Error is: ', error);
+});
+
+//mongoose.connect("mongodb+srv://vrifjrom:kley2c0p@cluster0-8jh9m.mongodb.net/test?retryWrites=true&w=majority"); 
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function () {  
   console.log('Mongoose conexion exitosa');

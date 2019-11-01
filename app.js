@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const passport = require('passport');
 const sesion = require('express-session');
+const cookieSession = require('cookie-session');
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 var compression = require('compression');
@@ -17,6 +18,7 @@ var app = express();
 const helmet = require('helmet')
 require('./database/conexion');
 require('dotenv').config();
+require('./config/passport');
 
 // all environments
 app.use(helmet())
@@ -46,16 +48,26 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use(sesion({
+/*app.use(sesion({
   secret: process.env.LICENCIA,
   resave: true,
   saveUninitialized: true,
+}));*/
+
+app.use(cookieSession({
+  name: 'sesion', 
+  key    : process.env.cookieKey,
+  secret : process.env.LICENCIA,
+  resave: true,
+  saveUninitialized: true,
+  rolling: true, 
+  cookie : {maxAge: 1*60*60*1000}
 }));
 
 // Passport init
 app.use(passport.initialize());
 app.use(passport.session());
-require('./config/passport');
+
 
 //FLASH PARA MOSTRAR MENSAJES
 app.use(flash());
