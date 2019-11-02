@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var keys = require('../config/keys');
 
 db = mongoose.createConnection(keys.mongodb.dbURI, {
+  dbName: 'test',
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
