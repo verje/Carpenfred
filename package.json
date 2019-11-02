@@ -1,12 +1,12 @@
 {
-  "name": "savedata",
+  "name": "carpenfred",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
-  "author": "",
+  "author": "Jesus Romero",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
