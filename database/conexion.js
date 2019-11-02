@@ -1,16 +1,20 @@
 var mongoose = require('mongoose'); 
-require('dotenv').config();
+var keys = require('../config/keys');
 
-mongoose.connect('mongodb+srv://vrifjrom:kley2c0p@cluster0-8jh9m.mongodb.net/test?retryWrites=true&w=majority', {
+db = mongoose.createConnection(keys.mongodb.dbURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
-mongoose.connection.once('open', function(){
-console.log('Conection has been made!');}).on('error', function(error)
-  {console.log('Error is: ', error);
+
+db.on('error', function () {
+  console.log('Error! Database connection failed.');
 });
 
-//mongoose.connect("mongodb+srv://vrifjrom:kley2c0p@cluster0-8jh9m.mongodb.net/test?retryWrites=true&w=majority"); 
+db.once('open', function (argument) {
+  console.log('Database connection established!');
+})
+/*
+mongoose.connect(process.env.dbURI); 
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function () {  
   console.log('Mongoose conexion exitosa');
@@ -30,4 +34,5 @@ process.on('SIGINT', function() {
     process.exit(0); 
   }); 
 }); 
-//require('./../models/team-esquema');
+require('./../models/team-esquema');*/
+module.exports = db;

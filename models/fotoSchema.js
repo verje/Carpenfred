@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+require ('../database/conexion');
 
 const ImgSchema = new Schema({
     imageURL: {type: String, required: true},
@@ -10,4 +11,4 @@ const ImgSchema = new Schema({
 }, 
 {timestamps: true});
 
-module.exports = mongoose.model('Img', ImgSchema);
+module.exports = db.model('Img', ImgSchema);

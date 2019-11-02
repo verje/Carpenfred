@@ -16,6 +16,7 @@ var routes_clientes = require('./routes/routes_clientes');
 var routeCorreo = require ('./routes/routeMail');
 var app = express();
 const helmet = require('helmet')
+var keys = require('./config/keys');
 require('./database/conexion');
 require('dotenv').config();
 require('./config/passport');
@@ -32,7 +33,7 @@ const hbs = exphbs.create({
   extname:'.hbs',
   helpers: {
     IsAdmin: function(valor, options){
-      if (valor==process.env.vrole){
+      if (valor==keys.app.vrole){
         return options.fn(this);
       } else {
         return options.inverse(this);
@@ -56,7 +57,9 @@ app.use(cookieParser());
 
 app.use(cookieSession({
   name: 'sesion',
-  keys: ['Natalia24', 'Claudia01']
+  secret: process.env.LICENCIA,
+  keys: [keys.sesion.cookieKey],
+  maxAge: 1*60*60*1000
 }));
 
 // Passport init

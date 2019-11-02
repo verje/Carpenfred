@@ -82,13 +82,13 @@ router.post('/image/delete/:id', checkAuthentication, async (req, res)=>{
 //Editar-Modificar
 router.post('/image/in/:id', checkAuthentication, async (req, res)=>{
     const InGallery = 'si'
-	await Img.findByIdAndUpdate(req.params.id, {InGallery});
+	await Img.findByIdAndUpdate(req.params.id, {InGallery}, {useFindAndModify: false});
 	req.flash('mensaje','La modificación ha sido satisfactoria');
     res.redirect('/galeria_admin');
 });
 router.post('/image/out/:id', checkAuthentication, async (req, res)=>{
     const InGallery = 'no'
-	await Img.findByIdAndUpdate(req.params.id, {InGallery});
+	await Img.findByIdAndUpdate(req.params.id, {InGallery},  {useFindAndModify: false});
 	req.flash('mensaje','La modificación ha sido satisfactoria');
     res.redirect('/galeria_admin');
 });

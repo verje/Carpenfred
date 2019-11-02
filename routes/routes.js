@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const clientes = require ('../models/clientesSchema');
-//require('../config/passport');
+const keys = require('../config/keys');
 const checkAuthentication = require('../handlers/checkAuth');
+
 
 //Incluir
 router.get('/register', checkAuthentication, function(req, res){
@@ -56,12 +57,12 @@ router.post('/register', checkAuthentication, async (req, res)=>{
 
 			var nodeMailer = require('nodemailer');
 			let transporter = nodeMailer.createTransport({
-				host: process.env.vhost,
-				port: process.env.vport,
+				host: keys.mailOptions.vhost,
+				port: keys.mailOptions.vport,
 				secure: true,
 				auth: {
-					user: process.env.correo,
-					pass: process.env.clave
+					user: keys.mailOptions.correo,
+					pass: keys.mailOptions.clave
 				}
 			});
 		
@@ -122,10 +123,9 @@ router.get('/modificar/:id', checkAuthentication, async (req, res)=>{
 router.post('/modificar/:id', checkAuthentication, async (req, res)=>{
     const name_cli = req.body.name
     const username_cli=req.body.username
-    //const password_cli = "natalia24"
     const email_cli = req.body.email
-    const role = 'user'
-	await clientes.findByIdAndUpdate(req.params.id, {$set: {name_cli, username_cli, email_cli, role}}).exec(function(err){
+	const telf_cli = req.body.telf
+	await clientes.findByIdAndUpdate(req.params.id, {$set: {name_cli, username_cli, email_cli, telf_cli}}, {useFindAndModify: false}).exec(function(err){
 		if(err) {
 			console.log(err);
 		}

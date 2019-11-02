@@ -61,8 +61,12 @@ router.get('/proyectos/modificar/:id', checkAuthentication, async (req, res)=>{
 })
 
 router.post('/proyectos/modificar/:id', checkAuthentication, async (req, res)=>{
-    const {nombre_proy, cliente_proy, email_cliente}=req.body;
-	await proyecto.findByIdAndUpdate(req.params.id, {nombre_proy, cliente_proy, email_cliente});
+    const {nombre_proy, cliente_proy}=req.body;
+	await proyecto.findByIdAndUpdate(req.params.id, {$set: {nombre_proy, cliente_proy}}, {useFindAndModify: false}).exec(function(err){
+		if(err) {
+			console.log(err);
+		}
+	})	
 	req.flash('mensaje','Proyecto modificado con éxito');
     res.redirect('/proyectos/ver_proyectos');
 });

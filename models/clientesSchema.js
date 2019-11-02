@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 const bcrip = require('bcryptjs');
+require ('../database/conexion');
 
 const clientSchema = new schema({
     name_cli: {type: String, required: true},
@@ -23,6 +24,6 @@ clientSchema.methods.encryptPassword = async (param_password) => {
      return await bcrip.compare(password, this.password_cli);
  }
 
-module.exports = mongoose.model('clientes', clientSchema);
+module.exports = db.model('clientes', clientSchema);
 
 
