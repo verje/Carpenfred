@@ -2,7 +2,8 @@
 
 module.exports = {
     mongodb : {
-        dbURI: 'mongodb+srv://vrifjrom:kley2c0p@cluster0-8jh9m.mongodb.net/test?retryWrites=true&w=majority'
+        //dbURI: 'mongodb+srv://vrifjrom:kley2c0p@cluster0-8jh9m.mongodb.net/test?retryWrites=true&w=majority'
+        dbURI: 'mongodb+srv://vrifjrom:kley2c0p@cluster0-8jh9m.mongodb.net/test?ssl=true&authSource=admin'
     },
     cloudinary : {
         cloudname : 'verje',
