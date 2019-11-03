@@ -27,8 +27,8 @@ router.get('/galeria_cliente', checkAuthentication, async (req, resp)=>{
 });
 
 router.get('/subirfotos', checkAuthentication, async (req, res) =>{
-	usuarios = await Users.find({role: 'user'}).sort({date: 'desc'});
-	proyectos = await Proyectos.find({}).sort({date: 'desc'});
+	usuarios = await Users.find({role: 'user'}).sort({username_cli: 1});
+	proyectos = await Proyectos.find({}).sort({nombre_proy: 1});
     res.render("imagenes/subirFoto.hbs", {usuarios, proyectos});
 });
 

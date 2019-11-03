@@ -39,8 +39,7 @@ router.post('/proyectos/incluir', checkAuthentication, function(req, res){
 
 //Consultar
 router.get('/proyectos/ver_proyectos', checkAuthentication, async (req, res)=>{
-//	const registros = await proyectos.find({user: req.user.id}).sort({date: 'desc'});
-    const registros = await proyecto.find().sort({date: 'desc'});
+    const registros = await proyecto.find().sort({nombre_proy: 1});
     res.render('Proyectos/ver_proyectos.hbs', {registros});
 })
 //Eliminar

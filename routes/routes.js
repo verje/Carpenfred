@@ -97,9 +97,7 @@ router.post('/register', checkAuthentication, async (req, res)=>{
 
 //Consultar
 router.get('/consultar', checkAuthentication, async (req, res)=>{
-//	const registros = await clientes.find({user: req.user.id}).sort({date: 'desc'});
-	const registros = await clientes.find({role:'user'}).sort({date: 'desc'});
-	//res.render('Operations/consulta.hbs', {registros});
+	const registros = await clientes.find({role:'user'}).sort({name_cli: 1});
 	res.render('Clientes/ListaClientes.hbs', {registros});
 })
 //Eliminar
