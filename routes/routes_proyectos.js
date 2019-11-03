@@ -7,8 +7,9 @@ const checkAuthentication = require('../handlers/checkAuth');
 var usuarios = null;
 router.get('/proyectos/incluir', checkAuthentication, async (req, res)=>{
     usuarios = await Users.find({role: 'user'}).sort({date: 'desc'});
-    res.render("proyectos/registroProy.hbs", {usuarios});
+    res.render('Proyectos/registroProy.hbs', {usuarios});
 });
+
 router.post('/proyectos/incluir', checkAuthentication, function(req, res){
 	const errors = [];
 	const {nombre_proy, cliente_proy} = req.body;
